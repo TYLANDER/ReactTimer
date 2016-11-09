@@ -25,9 +25,7 @@ var Countdown = React.createClass({
       }
     }
   },
-
   componentWillUnmount: function () {
-    console.log('componentDidUnmount');
     clearInterval(this.timer);
     this.timer = undefined;
   },
@@ -43,7 +41,7 @@ var Countdown = React.createClass({
       }
     }, 1000);
   },
-  handleSetCountdown: function (seconds){
+  handleSetCountdown: function (seconds) {
     this.setState({
       count: seconds,
       countdownStatus: 'started'
@@ -64,13 +62,12 @@ var Countdown = React.createClass({
 
     return (
       <div>
+        <h1 className="page-title">Countdown App</h1>
         <Clock totalSeconds={count}/>
         {renderControlArea()}
       </div>
     );
   }
 });
-
-
 
 module.exports = Countdown;
